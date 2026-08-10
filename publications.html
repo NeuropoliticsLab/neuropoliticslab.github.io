@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications — Neuropolitics Research Lab</title>
+<meta name="description" content="Peer-reviewed publications by members of the Neuropolitics Research Lab, filterable by type and year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">NR</span>
+      <span class="brand-text">
+        <span class="brand-name">Neuropolitics Research Lab</span>
+        <span class="brand-sub">University of Edinburgh</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub"><a href="research.html">Research</a>
+          <ul class="sub">
+            <li><a href="research.html#methods">Our methods</a></li>
+            <li><a href="research.html#fmri">fMRI</a></li>
+            <li><a href="research.html#face">Face-emotion &amp; eye-tracking</a></li>
+            <li><a href="research.html#data">Big data &amp; social media</a></li>
+          </ul>
+        </li>
+        <li><a href="projects.html">Projects</a></li>
+        <li class="has-sub"><a href="publications.html">Publications</a>
+          <ul class="sub">
+            <li><a href="publications.html">All publications</a></li>
+            <li><a href="working-papers.html">Working papers &amp; preprints</a></li>
+          </ul>
+        </li>
+        <li><a href="engagement.html">Public Engagement</a></li>
+        <li class="has-sub"><a href="about.html">About us</a>
+          <ul class="sub">
+            <li><a href="about.html#team">Project team</a></li>
+            <li><a href="about.html#collaborators">Collaborators</a></li>
+          </ul>
+        </li>
+        <li><a href="https://blogs.sps.ed.ac.uk/neuropolitics/" rel="noopener">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Publications</p>
+      <h1>Publications</h1>
+      <p>Peer-reviewed work by members of the lab. Lab members are shown in bold. Preprints and
+      work under review are listed separately on the
+      <a href="working-papers.html">working papers</a> page.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+
+      <div class="pub-controls">
+        <label class="filter-label" for="pub-search">Search</label>
+        <input class="pub-search" id="pub-search" type="search"
+               placeholder="Search titles, authors or venues…" autocomplete="off">
+
+        <div class="filter-group">
+          <span class="filter-label" id="type-label">Type</span>
+          <div class="chips" id="type-filters" role="group" aria-labelledby="type-label"></div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label" id="year-label">Year</span>
+          <div class="chips" id="year-filters" role="group" aria-labelledby="year-label"></div>
+        </div>
+      </div>
+
+      <p class="pub-count" id="pub-count" role="status" aria-live="polite"></p>
+
+      <div id="pub-list"></div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Neuropolitics Research Lab</h4>
+        <p>Producing transdisciplinary research, utilising developments in the cognitive
+        neurosciences, to shed new light on political attitudes, identities and
+        decision-behaviours.</p>
+        <p>School of Social and Political Science<br>
+        University of Edinburgh<br>
+        Chrystal Macmillan Building, 15a George Square<br>
+        Edinburgh EH8 9LD</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="working-papers.html">Working papers</a></li>
+          <li><a href="engagement.html">Public engagement</a></li>
+          <li><a href="about.html">About us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://blogs.sps.ed.ac.uk/neuropolitics/" rel="noopener">Lab blog</a></li>
+          <li><a href="https://www.sps.ed.ac.uk/" rel="noopener">School of Social &amp; Political Science</a></li>
+          <li><a href="https://www.research.ed.ac.uk/" rel="noopener">Edinburgh Research Explorer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Neuropolitics Research Lab, University of Edinburgh.</span>
+      <span>The University of Edinburgh is a charitable body registered in Scotland, no.&nbsp;SC005336.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/publications.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var list = document.getElementById('pub-list');
+  var count = document.getElementById('pub-count');
+  var search = document.getElementById('pub-search');
+  var typeBox = document.getElementById('type-filters');
+  var yearBox = document.getElementById('year-filters');
+
+  var state = { type: 'all', year: 'all', q: '' };
+
+  // Build the chip rows from the data, so they never drift out of sync.
+  var types = ['all'].concat(
+    Object.keys(TYPE_LABELS).filter(function (t) {
+      return PUBLICATIONS.some(function (p) { return p.type === t; });
+    })
+  );
+  var years = ['all'].concat(
+    PUBLICATIONS.map(function (p) { return p.year; })
+      .filter(function (y, i, a) { return a.indexOf(y) === i; })
+      .sort(function (a, b) { return b - a; })
+  );
+
+  function chip(value, label, group, extraClass) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip' + (extraClass ? ' ' + extraClass : '');
+    b.textContent = label;
+    b.dataset.value = value;
+    b.setAttribute('aria-pressed', String(state[group] === value));
+    b.addEventListener('click', function () {
+      state[group] = value;
+      (group === 'type' ? typeBox : yearBox)
+        .querySelectorAll('.chip')
+        .forEach(function (c) {
+          c.setAttribute('aria-pressed', String(c.dataset.value === String(value)));
+        });
+      apply();
+    });
+    return b;
+  }
+
+  types.forEach(function (t) {
+    typeBox.appendChild(chip(t, t === 'all' ? 'All types' : TYPE_LABELS[t], 'type'));
+  });
+  years.forEach(function (y) {
+    yearBox.appendChild(chip(y, y === 'all' ? 'All years' : y, 'year', 'chip-year'));
+  });
+
+  function apply() {
+    var q = state.q.trim().toLowerCase();
+    var filtered = PUBLICATIONS.filter(function (p) {
+      if (state.type !== 'all' && p.type !== state.type) return false;
+      if (state.year !== 'all' && String(p.year) !== String(state.year)) return false;
+      if (q) {
+        var hay = (p.title + ' ' + p.authors + ' ' + p.venue).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    count.textContent = filtered.length +
+      (filtered.length === 1 ? ' publication' : ' publications');
+    renderPublicationList(list, filtered);
+  }
+
+  var debounce;
+  search.addEventListener('input', function () {
+    clearTimeout(debounce);
+    debounce = setTimeout(function () { state.q = search.value; apply(); }, 120);
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
