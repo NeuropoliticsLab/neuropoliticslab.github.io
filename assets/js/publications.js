@@ -46,13 +46,16 @@ var TYPE_LABELS = {
 var PUBLICATIONS = [
   /* ------------------------------------------------------------- 2026 -- */
   {
+    // Title, author list and venue confirmed by Constantine Kyritsopoulos, an
+    // author. NB the Crossref record behind the DOI still carries the earlier
+    // title and lists Peyton Snyder in place of Sara Dalzel-Job.
     year: 2026, type: 'conference',
-    title: 'Can Large Language Models Facilitate Qualitative Political Narrative Analysis?',
-    authors: 'Luke Stephens, Clare Llewellyn, Lauren Rogers, Constantine Kyritsopoulos, Arman Prangere, Feiteng Long, Peyton Snyder, Laura Cram',
-    venue: 'Computational Humanities Research',
+    title: 'Solidarity and belonging: Can large language models facilitate qualitative narrative analysis?',
+    authors: 'Luke Stephens, Clare Llewellyn, Lauren Rogers, Constantine Kyritsopoulos, Arman Prangere, Feiteng Long, Sara Dalzel-Job, Laura Cram',
+    venue: 'Proceedings of the Language Resources and Evaluation Conference (LREC)',
     doi: '10.63317/4rwv2gsphhck',
     featured: true,
-    note: 'A lab-wide collaboration testing whether LLMs can recover both the structure and the themes of political narratives at scale.'
+    note: 'A lab-wide collaboration testing whether LLMs can recover both the structure and the themes of narratives at scale.'
   },
   {
     year: 2026, type: 'conference',
