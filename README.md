@@ -34,20 +34,12 @@ The palette is taken from the live site's own generated theme CSS
 | `--ink` | `#5d5c59` | body copy |
 | `--rule` | `#dee0e1` | borders |
 
-These match the official NRlabs logo exactly (green "NR", purple "labs").
+These match the official NRlabs logo (green "NR", purple "labs"), which sits in the header
+as `assets/img/Logo.png`. The CSS sizes it by height with `width: auto`, so a vector
+replacement of any aspect ratio drops in without further changes.
 
 Typefaces match the live site: **Montserrat** for headings, **Open Sans** for body.
 Every colour is a CSS custom property under `:root` at the top of `assets/css/style.css`.
-
-### ⚠ The logo is a stand-in
-
-`assets/img/logo.svg` is a **typographic approximation**, not the official mark — it exists
-so the header isn't broken. The letterforms are wrong.
-
-**To fix:** save the official logo over `assets/img/logo.svg` (vector preferred — it stays
-sharp on retina screens and at any header size). If you only have a raster copy, save it as
-`assets/img/logo.png` and change `logo.svg` → `logo.png` in the header of each `.html` file.
-The CSS sizes the logo by height with `width: auto`, so any aspect ratio sits correctly.
 
 ## People
 

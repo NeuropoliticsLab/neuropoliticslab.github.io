@@ -17,7 +17,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="NRlabs Neuropolitics Research — home">
-      <img class="brand-logo" src="assets/img/logo.svg" alt="NRlabs — neuropolitics research" width="200" height="66">
+      <img class="brand-logo" src="assets/img/Logo.png" alt="NRlabs — neuropolitics research" width="1000" height="355">
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -70,63 +70,20 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" style="text-align:center">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Our research</p>
-        <h2>Four programmes, one question</h2>
-        <p>What is happening in people's brains, minds and bodies when they post comments online,
-        make policy, vote in elections, or decide whether to trust or share &lsquo;fake&rsquo; news?</p>
-      </div>
-
-      <div class="grid grid-4">
-        <a class="card card-topline" href="research.html#behaviour">
-          <h3>Political Behaviour</h3>
-          <p>Measuring spontaneous expression of opinion online alongside the neuro-biological
-          correlates of political behaviour.</p>
-        </a>
-        <a class="card card-topline" href="research.html#policy">
-          <h3>Public Policy</h3>
-          <p>How the policy environment, physiology, personality and inter-group dynamics shape
-          policy decisions and public acceptance.</p>
-        </a>
-        <a class="card card-topline" href="research.html#identity">
-          <h3>Identity</h3>
-          <p>What underpins a sense of social belonging and political obligation, and how implicit
-          triggers shift it.</p>
-        </a>
-        <a class="card card-topline" href="research.html#communication">
-          <h3>Political Communication</h3>
-          <p>How citizens balance accuracy against consistency in an age of &lsquo;fake news&rsquo;
-          and bots.</p>
-        </a>
+      <h2>Meet the team!</h2>
+      <p class="lede" style="max-width:58ch;margin:0 auto 2.5rem">Political scientists,
+      psychologists, cognitive neuroscientists and computational social scientists, working on the
+      same questions from different directions.</p>
+      <div id="home-people"></div>
+      <div class="btn-row" style="justify-content:center;margin-top:2.5rem">
+        <a class="btn btn-outline" href="people.html">Full team &amp; collaborators</a>
       </div>
     </div>
   </section>
 
   <section class="section section-alt">
-    <div class="wrap">
-      <div class="split">
-        <div>
-          <p class="eyebrow">Our methods</p>
-          <h2>From the scanner to the timeline</h2>
-          <p>Our team combines functional brain imaging and psychophysiology with survey
-          experiments, behavioural games and large-scale computational text analysis — including
-          large language models — to explore the mind&ndash;brain&ndash;action nexus in political
-          context.</p>
-          <p>We use these insights to guide public policy practice and enhance public understanding
-          at a national and international level.</p>
-          <a class="arrow-link" href="research.html#methods">See the full method set</a>
-        </div>
-        <figure class="figure">
-          <img src="assets/img/fmri.jpg" alt="An fMRI scan showing brain activation during a working memory task." loading="lazy" width="900" height="500">
-          <figcaption>fMRI scan during working memory tasks.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Selected work</p>
@@ -194,15 +151,18 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/people.js"></script>
 <script src="assets/js/publications.js"></script>
 <script>
-  // Home page shows the six most recent items, newest first.
-  var mount = document.getElementById('featured-pubs');
+  // Current members, front and centre. Past members stay on the people page.
+  renderPeopleGrid(document.getElementById('home-people'), { exclude: ['past'], headings: false });
+
+  // Then the six most recent publications, newest first.
   var recent = PUBLICATIONS.slice().sort(function (a, b) {
     if (b.year !== a.year) return b.year - a.year;
     return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
   }).slice(0, 6);
-  renderPublicationList(mount, recent);
+  renderPublicationList(document.getElementById('featured-pubs'), recent);
 </script>
 </body>
 </html>

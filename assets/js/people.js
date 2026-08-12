@@ -235,25 +235,47 @@ function renderLinkRow(person) {
   }).join('') + '</div>';
 }
 
-/* Circular-avatar grid, grouped, each card linking to the profile page. */
-function renderPeopleGrid(mount) {
-  var html = GROUPS.map(function (g) {
-    var members = PEOPLE.filter(function (p) { return p.group === g.id; });
+/* Circular-avatar grid, grouped, each card linking to the profile page.
+   Options:
+     exclude   array of group ids to leave out (the home page drops 'past')
+     headings  false to render one flat grid with no group titles */
+function renderPeopleGrid(mount, opts) {
+  opts = opts || {};
+  var skip = opts.exclude || [];
+  var showHeadings = opts.headings !== false;
+
+  var groups = GROUPS.filter(function (g) { return skip.indexOf(g.id) === -1; });
+
+  function card(p) {
+    return '<div class="avatar-card">' +
+      '<a class="avatar-link" href="person.html?id=' + p.slug + '">' +
+        '<span class="avatar"><img src="' + p.photo + '" alt="' + p.name +
+          '" loading="lazy" width="180" height="180"></span>' +
+        '<span class="avatar-name">' + p.name + '</span>' +
+      '</a>' +
+      '<p class="avatar-role">' + p.role + '</p>' +
+      renderLinkRow(p) +
+    '</div>';
+  }
+
+  function membersOf(g) {
+    return PEOPLE.filter(function (p) { return p.group === g.id; });
+  }
+
+  // Without headings there is nothing to separate the groups, so everyone goes
+  // into one grid and wraps as a single centred block.
+  if (!showHeadings) {
+    var all = groups.reduce(function (acc, g) { return acc.concat(membersOf(g)); }, []);
+    mount.innerHTML = '<div class="avatar-grid">' + all.map(card).join('') + '</div>';
+    return;
+  }
+
+  mount.innerHTML = groups.map(function (g) {
+    var members = membersOf(g);
     if (!members.length) return '';
     return '<section class="people-group">' +
       '<h2 class="people-group-title">' + g.label + '</h2>' +
-      '<div class="avatar-grid">' + members.map(function (p) {
-        return '<div class="avatar-card">' +
-          '<a class="avatar-link" href="person.html?id=' + p.slug + '">' +
-            '<span class="avatar"><img src="' + p.photo + '" alt="' + p.name +
-              '" loading="lazy" width="180" height="180"></span>' +
-            '<span class="avatar-name">' + p.name + '</span>' +
-          '</a>' +
-          '<p class="avatar-role">' + p.role + '</p>' +
-          renderLinkRow(p) +
-        '</div>';
-      }).join('') + '</div>' +
+      '<div class="avatar-grid">' + members.map(card).join('') + '</div>' +
     '</section>';
   }).join('');
-  mount.innerHTML = html;
 }
