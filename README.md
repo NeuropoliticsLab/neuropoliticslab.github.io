@@ -1,7 +1,7 @@
 # Neuropolitics Research Lab — static site
 
-A parallel build of <https://neuropolitics.sps.ed.ac.uk>, with three sections the live site
-doesn't have: **Projects**, **Publications** and **Working papers**.
+A parallel build of <https://neuropolitics.sps.ed.ac.uk>, with two sections the live site
+does not have — **Publications** and **Working papers** — and a rebuilt **People** section.
 
 Plain HTML, CSS and vanilla JavaScript. No build step, no framework, no npm.
 
@@ -9,15 +9,16 @@ Plain HTML, CSS and vanilla JavaScript. No build step, no framework, no npm.
 .
 ├── index.html              ← home
 ├── research.html           ← what we do, methods, the four programmes
-├── projects.html           ← individual studies (new)
 ├── publications.html       ← filterable publication list (new)
 ├── working-papers.html     ← preprints, registered reports, in prep (new)
 ├── engagement.html         ← teaching, press, policy
-├── about.html              ← team + collaborators
+├── people.html             ← avatar grid, links to profiles
+├── person.html             ← profile template, reads ?id=<slug>
 └── assets/
     ├── css/style.css       ← all styling
     ├── js/main.js          ← nav
     ├── js/publications.js  ← publication DATA + list rendering
+    ├── js/people.js        ← people DATA + grid/profile rendering
     └── img/                ← team portraits, collaborators, figures
 ```
 
@@ -33,8 +34,42 @@ The palette is taken from the live site's own generated theme CSS
 | `--ink` | `#5d5c59` | body copy |
 | `--rule` | `#dee0e1` | borders |
 
+These match the official NRlabs logo exactly (green "NR", purple "labs").
+
 Typefaces match the live site: **Montserrat** for headings, **Open Sans** for body.
 Every colour is a CSS custom property under `:root` at the top of `assets/css/style.css`.
+
+### ⚠ The logo is a stand-in
+
+`assets/img/logo.svg` is a **typographic approximation**, not the official mark — it exists
+so the header isn't broken. The letterforms are wrong.
+
+**To fix:** save the official logo over `assets/img/logo.svg` (vector preferred — it stays
+sharp on retina screens and at any header size). If you only have a raster copy, save it as
+`assets/img/logo.png` and change `logo.svg` → `logo.png` in the header of each `.html` file.
+The CSS sizes the logo by height with `width: auto`, so any aspect ratio sits correctly.
+
+## People
+
+`assets/js/people.js` is the single source of truth. `people.html` renders the avatar grid
+from it, and `person.html?id=<slug>` renders the individual profile — so a person is added
+or edited in exactly one place.
+
+Each profile automatically lists that person's publications, matched with `pubPattern`.
+That field exists because **the name on the papers is often not the name on the site**:
+Robin Hill publishes as "Robin L. Hill", Sujin Hong as "Su-Jin Hong", and Kyritsopoulos
+appears as both "Constantine" and "Constantinos". Get `pubPattern` wrong and the profile
+silently shows zero papers, so check a new member's profile after adding them.
+
+### ⚠ Most profile links are missing
+
+Only URLs that were checked and resolve are included. Right now that means Laura Cram,
+Clare Llewellyn, Adam Moore and Robin Hill have links; **everyone else has an empty
+`links` array**. This is deliberate — a fabricated profile URL is worse than a missing one.
+
+Fill them in as you confirm them. The icon row renders only what's present, so partial data
+still looks right. Supported types: `email`, `web`, `pure`, `scholar`, `orcid`, `osf`,
+`github`, `linkedin`, `x`, `bluesky`.
 
 ## Editing publications
 

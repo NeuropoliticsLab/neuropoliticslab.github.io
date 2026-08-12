@@ -28,7 +28,7 @@ var LAB_MEMBERS = [
   'Sara Dalzel-Job',
   'Feiteng Long',
   'Luke Stephens',
-  'Constantine(?:s)?(?: George| G\\.)? Kyritsopoulos',
+  'Constantin(?:e|os)(?: George| G\\.)? Kyritsopoulos',
   'Arman Prangere',
   'Su-Jin Hong'
 ];

@@ -1,0 +1,24 @@
+<!--
+  STAND-IN LOGO — replace with the official asset.
+
+  This is a typographic approximation of the NRlabs wordmark, built so the
+  header is not broken while the real file is missing. It uses a system font
+  stack, so the letterforms are NOT the official ones.
+
+  To swap in the real logo: save it over this file as logo.svg (preferred, it
+  stays sharp at any size), or save it as logo.png and change the two
+  references in the page headers from logo.svg to logo.png.
+
+  Brand colours, confirmed against the official logo:
+    NR / neuropolitics research  #48797d
+    labs                         #812266
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" role="img" aria-label="NRlabs — neuropolitics research">
+  <g font-family="Montserrat, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="0" y="200" font-size="230" fill="#48797d" letter-spacing="-6">NR</text>
+    <text x="430" y="200" font-size="230" fill="#812266" letter-spacing="-4">labs</text>
+  </g>
+  <line x1="4" y1="243" x2="996" y2="243" stroke="#48797d" stroke-width="4"/>
+  <text x="6" y="315" font-family="Montserrat, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-weight="500" font-size="76" fill="#48797d" letter-spacing="0.5">neuropolitics research</text>
+</svg>

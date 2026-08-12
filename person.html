@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Publications — Neuropolitics Research Lab</title>
-<meta name="description" content="Peer-reviewed publications by members of the Neuropolitics Research Lab, filterable by type and year.">
+<title>Profile — Neuropolitics Research Lab</title>
+<meta name="description" content="Profile of a member of the Neuropolitics Research Lab at the University of Edinburgh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -53,43 +53,7 @@
 </header>
 
 <main id="main">
-
-  <div class="page-hero">
-    <div class="wrap">
-      <p class="eyebrow">Publications</p>
-      <h1>Publications</h1>
-      <p>Peer-reviewed work by members of the lab. Lab members are shown in bold. Preprints and
-      work under review are listed separately on the
-      <a href="working-papers.html">working papers</a> page.</p>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="wrap">
-
-      <div class="pub-controls">
-        <label class="filter-label" for="pub-search">Search</label>
-        <input class="pub-search" id="pub-search" type="search"
-               placeholder="Search titles, authors or venues…" autocomplete="off">
-
-        <div class="filter-group">
-          <span class="filter-label" id="type-label">Type</span>
-          <div class="chips" id="type-filters" role="group" aria-labelledby="type-label"></div>
-        </div>
-
-        <div class="filter-group">
-          <span class="filter-label" id="year-label">Year</span>
-          <div class="chips" id="year-filters" role="group" aria-labelledby="year-label"></div>
-        </div>
-      </div>
-
-      <p class="pub-count" id="pub-count" role="status" aria-live="polite"></p>
-
-      <div id="pub-list"></div>
-
-    </div>
-  </section>
-
+  <div id="profile"></div>
 </main>
 
 <footer class="site-footer">
@@ -132,81 +96,73 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/people.js"></script>
 <script src="assets/js/publications.js"></script>
 <script>
 (function () {
   'use strict';
 
-  var list = document.getElementById('pub-list');
-  var count = document.getElementById('pub-count');
-  var search = document.getElementById('pub-search');
-  var typeBox = document.getElementById('type-filters');
-  var yearBox = document.getElementById('year-filters');
+  var id = new URLSearchParams(location.search).get('id');
+  var person = PEOPLE.filter(function (p) { return p.slug === id; })[0];
+  var mount = document.getElementById('profile');
 
-  var state = { type: 'all', year: 'all', q: '' };
-
-  // Build the chip rows from the data, so they never drift out of sync.
-  var types = ['all'].concat(
-    Object.keys(TYPE_LABELS).filter(function (t) {
-      return PUBLICATIONS.some(function (p) { return p.type === t; });
-    })
-  );
-  var years = ['all'].concat(
-    PUBLICATIONS.map(function (p) { return p.year; })
-      .filter(function (y, i, a) { return a.indexOf(y) === i; })
-      .sort(function (a, b) { return b - a; })
-  );
-
-  function chip(value, label, group, extraClass) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'chip' + (extraClass ? ' ' + extraClass : '');
-    b.textContent = label;
-    b.dataset.value = value;
-    b.setAttribute('aria-pressed', String(state[group] === value));
-    b.addEventListener('click', function () {
-      state[group] = value;
-      (group === 'type' ? typeBox : yearBox)
-        .querySelectorAll('.chip')
-        .forEach(function (c) {
-          c.setAttribute('aria-pressed', String(c.dataset.value === String(value)));
-        });
-      apply();
-    });
-    return b;
+  if (!person) {
+    mount.innerHTML =
+      '<div class="page-hero"><div class="wrap">' +
+        '<h1>Profile not found</h1>' +
+        '<p>We could not find that person. Try the ' +
+        '<a href="people.html">people page</a>.</p>' +
+      '</div></div>';
+    return;
   }
 
-  types.forEach(function (t) {
-    typeBox.appendChild(chip(t, t === 'all' ? 'All types' : TYPE_LABELS[t], 'type'));
-  });
-  years.forEach(function (y) {
-    yearBox.appendChild(chip(y, y === 'all' ? 'All years' : y, 'year', 'chip-year'));
-  });
+  document.title = person.name + ' — Neuropolitics Research Lab';
+  var desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.setAttribute('content', person.name + ' — ' + person.fullRole +
+    ', Neuropolitics Research Lab, University of Edinburgh.');
 
-  function apply() {
-    var q = state.q.trim().toLowerCase();
-    var filtered = PUBLICATIONS.filter(function (p) {
-      if (state.type !== 'all' && p.type !== state.type) return false;
-      if (state.year !== 'all' && String(p.year) !== String(state.year)) return false;
-      if (q) {
-        var hay = (p.title + ' ' + p.authors + ' ' + p.venue).toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
-      }
-      return true;
-    });
+  // Papers this person co-authored. Matched on the person's own pubPattern —
+  // the name on the papers is often not the name shown on the site (Robin Hill
+  // publishes as "Robin L. Hill", Sujin Hong as "Su-Jin Hong").
+  var authored = person.pubPattern
+    ? PUBLICATIONS.filter(function (pub) {
+        return new RegExp(person.pubPattern).test(pub.authors);
+      }).sort(function (a, b) { return b.year - a.year; })
+    : [];
 
-    count.textContent = filtered.length +
-      (filtered.length === 1 ? ' publication' : ' publications');
-    renderPublicationList(list, filtered);
+  mount.innerHTML = '' +
+    '<div class="profile-head">' +
+      '<div class="wrap">' +
+        '<a class="back-link" href="people.html">&larr; All people</a>' +
+        '<div class="profile-head-inner">' +
+          '<span class="profile-photo"><img src="' + person.photo + '" alt="' +
+            person.name + '" width="220" height="220"></span>' +
+          '<div>' +
+            '<h1>' + person.name + '</h1>' +
+            '<p class="profile-role">' + person.fullRole + '</p>' +
+            renderLinkRow(person) +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<section class="section">' +
+      '<div class="wrap wrap-narrow" style="padding-left:0;padding-right:0">' +
+        person.bio.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
+      '</div>' +
+    '</section>' +
+    (authored.length
+      ? '<section class="section section-alt"><div class="wrap">' +
+          '<h2>Selected publications</h2>' +
+          '<div id="person-pubs"></div>' +
+          '<div class="btn-row" style="margin-top:1.5rem">' +
+            '<a class="btn btn-outline" href="publications.html">All lab publications</a>' +
+          '</div>' +
+        '</div></section>'
+      : '');
+
+  if (authored.length) {
+    renderPublicationList(document.getElementById('person-pubs'), authored);
   }
-
-  var debounce;
-  search.addEventListener('input', function () {
-    clearTimeout(debounce);
-    debounce = setTimeout(function () { state.q = search.value; apply(); }, 120);
-  });
-
-  apply();
 })();
 </script>
 </body>
