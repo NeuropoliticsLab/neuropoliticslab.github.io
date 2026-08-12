@@ -77,7 +77,8 @@ chips are all generated from the data, so they can't drift out of sync.
   authors: 'First Last, First Last',
   venue: 'Journal Name',
   doi: '10.1234/xyz',     // bare DOI, no https://doi.org/ prefix
-  featured: true,         // optional — pins a "Lab highlight" label
+  featured: true,         // optional — ordering only, sorts first within its
+                          // year on the home page. No label, no styling.
   note: 'One line of context.'   // optional
 }
 ```

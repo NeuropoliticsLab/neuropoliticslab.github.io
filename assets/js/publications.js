@@ -13,7 +13,8 @@
      venue    string
      doi      string — bare DOI, no https://doi.org/ prefix. Optional.
      url      string — used when there is no DOI. Optional.
-     featured true to pin a short label on the thumbnail. Optional.
+     featured ordering only — sorts first within its year on the home page.
+              It applies no label or styling of its own. Optional.
      note     string — one line of context. Optional.
    ========================================================================== */
 
@@ -497,8 +498,8 @@ function escapeHtml(s) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+/* Every entry is labelled with what it actually is — its publication type. */
 function thumbLabel(pub) {
-  if (pub.featured) return 'Lab<br>highlight';
   return (TYPE_LABELS[pub.type] || pub.type).replace(' ', '<br>');
 }
 
@@ -514,7 +515,7 @@ function renderPub(pub) {
 
   return '' +
     '<article class="pub" data-type="' + pub.type + '" data-year="' + pub.year + '">' +
-      '<div class="pub-thumb' + (pub.featured ? ' is-purple' : '') + '" aria-hidden="true">' +
+      '<div class="pub-thumb" aria-hidden="true">' +
         thumbLabel(pub) +
       '</div>' +
       '<div class="pub-body">' +
@@ -523,8 +524,7 @@ function renderPub(pub) {
         '<p class="pub-venue">' + escapeHtml(pub.venue) + ', ' + pub.year + '</p>' +
         (pub.note ? '<p class="pub-note">' + escapeHtml(pub.note) + '</p>' : '') +
         '<div class="pub-tags">' +
-          '<span class="tag' + (pub.featured ? ' tag-purple' : '') + '">' +
-            escapeHtml(TYPE_LABELS[pub.type] || pub.type) + '</span>' +
+          '<span class="tag">' + escapeHtml(TYPE_LABELS[pub.type] || pub.type) + '</span>' +
         '</div>' +
         (links.length ? '<div class="pub-links">' + links.join('') + '</div>' : '') +
       '</div>' +
