@@ -501,11 +501,6 @@ function escapeHtml(s) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-/* Every entry is labelled with what it actually is — its publication type. */
-function thumbLabel(pub) {
-  return (TYPE_LABELS[pub.type] || pub.type).replace(' ', '<br>');
-}
-
 function renderPub(pub) {
   var links = [];
   if (pub.doi) {
@@ -518,9 +513,6 @@ function renderPub(pub) {
 
   return '' +
     '<article class="pub" data-type="' + pub.type + '" data-year="' + pub.year + '">' +
-      '<div class="pub-thumb" aria-hidden="true">' +
-        thumbLabel(pub) +
-      '</div>' +
       '<div class="pub-body">' +
         '<h3 class="pub-title">' + escapeHtml(pub.title) + '</h3>' +
         '<p class="pub-authors">' + boldLabMembers(pub.authors) + '</p>' +

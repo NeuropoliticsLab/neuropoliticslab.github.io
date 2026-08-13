@@ -392,20 +392,17 @@ a.card:hover, a.card:focus-visible { text-decoration: none; box-shadow: var(--sh
 }
 .pub-year-heading:first-of-type { margin-top: .25rem; }
 
+/* No thumbnail column: it duplicated the type tag and imposed a minimum
+   entry height, so entries ran taller than their content needed. Records now
+   use the full width, which also means author lists wrap onto fewer lines. */
 .pub {
-  display: grid; grid-template-columns: 88px 1fr; gap: 1.15rem;
-  padding: .95rem 0; border-bottom: 1px solid var(--rule-soft);
+  padding: .8rem 0; border-bottom: 1px solid var(--rule-soft);
 }
 .pub:last-child { border-bottom: 0; }
 
-.pub-thumb {
-  width: 88px; height: 88px; border-radius: var(--radius); overflow: hidden;
-  display: grid; place-items: center; text-align: center;
-  background: var(--green-wash); border: 1px solid var(--rule);
-  font-family: var(--display); font-size: .62rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--green-dark);
-  padding: .5rem; line-height: 1.4;
-}
+/* Keeps long author lists from stretching to an unreadable line length on
+   wide screens, without narrowing the column the rest of the entry uses. */
+.pub-body { max-width: 92ch; }
 
 /* The page-wide 1.75 line-height is too airy for dense reference entries,
    so the record sets its own tighter rhythm. */
@@ -547,8 +544,7 @@ a.card:hover, a.card:focus-visible { text-decoration: none; box-shadow: var(--sh
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .person { grid-template-columns: 1fr; }
   .person-photo { width: 130px; height: 130px; }
-  .pub { grid-template-columns: 1fr; gap: .9rem; }
-  .pub-thumb { width: 84px; height: 84px; }
+  .pub { padding: .7rem 0; }
   .card { padding: 1.5rem; }
   .brand-logo { height: 34px; }
   .avatar-grid { gap: 1.75rem 1rem; }
