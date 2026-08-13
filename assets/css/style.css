@@ -387,19 +387,19 @@ a.card:hover, a.card:focus-visible { text-decoration: none; box-shadow: var(--sh
 .pub-count { font-size: .85rem; color: var(--ink-soft); margin: 1.5rem 0 .5rem; }
 
 .pub-year-heading {
-  font-family: var(--display); font-size: 1.55rem; font-weight: 700; color: var(--ink-strong);
-  padding-bottom: .4rem; margin: 2.75rem 0 1.25rem; border-bottom: 2px solid var(--green);
+  font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--ink-strong);
+  padding-bottom: .3rem; margin: 1.9rem 0 .8rem; border-bottom: 2px solid var(--green);
 }
-.pub-year-heading:first-of-type { margin-top: .5rem; }
+.pub-year-heading:first-of-type { margin-top: .25rem; }
 
 .pub {
-  display: grid; grid-template-columns: 104px 1fr; gap: 1.5rem;
-  padding: 1.5rem 0; border-bottom: 1px solid var(--rule-soft);
+  display: grid; grid-template-columns: 88px 1fr; gap: 1.15rem;
+  padding: .95rem 0; border-bottom: 1px solid var(--rule-soft);
 }
 .pub:last-child { border-bottom: 0; }
 
 .pub-thumb {
-  width: 104px; height: 104px; border-radius: var(--radius); overflow: hidden;
+  width: 88px; height: 88px; border-radius: var(--radius); overflow: hidden;
   display: grid; place-items: center; text-align: center;
   background: var(--green-wash); border: 1px solid var(--rule);
   font-family: var(--display); font-size: .62rem; font-weight: 700;
@@ -407,24 +407,26 @@ a.card:hover, a.card:focus-visible { text-decoration: none; box-shadow: var(--sh
   padding: .5rem; line-height: 1.4;
 }
 
-.pub-title { font-size: 1.06rem; font-family: var(--display); font-weight: 700; margin-bottom: .35rem; line-height: 1.4; }
-.pub-authors { font-size: .9rem; color: var(--ink); margin-bottom: .3rem; }
+/* The page-wide 1.75 line-height is too airy for dense reference entries,
+   so the record sets its own tighter rhythm. */
+.pub-title { font-size: 1.02rem; font-family: var(--display); font-weight: 700; margin-bottom: .2rem; line-height: 1.32; }
+.pub-authors { font-size: .88rem; color: var(--ink); margin-bottom: .12rem; line-height: 1.45; }
 .pub-authors .lab-member { font-weight: 700; color: var(--ink-strong); }
-.pub-venue { font-size: .88rem; color: var(--ink-soft); font-style: italic; margin-bottom: .7rem; }
-.pub-note { font-size: .88rem; color: var(--ink); margin-bottom: .7rem; }
+.pub-venue { font-size: .86rem; color: var(--ink-soft); font-style: italic; margin-bottom: .45rem; line-height: 1.4; }
+.pub-note { font-size: .86rem; color: var(--ink); margin-bottom: .45rem; line-height: 1.5; }
 
-.pub-tags { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.pub-tags { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; line-height: 1; }
 .tag {
-  font-family: var(--display); font-size: .68rem; font-weight: 700; letter-spacing: .07em;
-  text-transform: uppercase; padding: .25rem .6rem; border-radius: 2px;
+  font-family: var(--display); font-size: .66rem; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; padding: .22rem .55rem; border-radius: 2px;
   background: var(--green-wash); color: var(--green-dark);
 }
 .tag-open { background: #eaf4ec; color: #256c39; }
 
-.pub-links { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem; }
+.pub-links { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .45rem; line-height: 1; }
 .pub-link {
-  font-family: var(--display); font-size: .72rem; font-weight: 700; letter-spacing: .05em;
-  text-transform: uppercase; padding: .32rem .7rem;
+  font-family: var(--display); font-size: .7rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; padding: .3rem .65rem;
   border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); background: #fff;
 }
 .pub-link:hover, .pub-link:focus-visible { background: var(--green); border-color: var(--green); color: #fff; text-decoration: none; }
@@ -487,6 +489,17 @@ a.card:hover, a.card:focus-visible { text-decoration: none; box-shadow: var(--sh
 .site-footer a { color: rgba(255, 255, 255, .85); }
 .site-footer a:hover { color: #fff; }
 .site-footer ul { list-style: none; padding: 0; }
+
+/* University of Edinburgh crest. The official file is black on transparent;
+   inverting it yields the standard white-on-dark treatment for the footer. */
+.uoe-logo { display: inline-block; margin-top: 1.5rem; }
+.uoe-logo img {
+  width: 220px; height: auto;
+  filter: brightness(0) invert(1);
+  opacity: .85;
+  transition: opacity .15s ease;
+}
+.uoe-logo:hover img, .uoe-logo:focus-visible img { opacity: 1; }
 .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1.6fr 1fr 1fr; }
 .footer-bottom {
   margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, .12);

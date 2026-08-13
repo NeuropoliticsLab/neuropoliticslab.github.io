@@ -22,7 +22,7 @@ var GROUPS = [
   { id: 'faculty', label: 'Faculty and senior staff' },
   { id: 'researchers', label: 'Researchers' },
   { id: 'assistants', label: 'Research assistants' },
-  { id: 'past', label: 'Past members' }
+  { id: 'past', label: 'Continuing collaborators and past members' }
 ];
 
 var PEOPLE = [
@@ -122,7 +122,7 @@ var PEOPLE = [
     shortName: 'Feiteng Long',
     role: 'Research Fellow',
     fullRole: 'Research Fellow',
-    group: 'researchers',
+    group: 'past',
     photo: 'assets/img/team/feiteng-long.jpg',
     bio: [
       'Feiteng is a postdoctoral research fellow at the Neuropolitics Research Lab. His research explores the social and psychological processes behind intergroup relations and social change. He focuses on how norm messages can reduce prejudice, promote collective action, and mitigate polarization, particularly for migrants and LGBT+ groups.',
@@ -170,7 +170,7 @@ var PEOPLE = [
     shortName: 'Arman Prangere',
     role: 'Research Assistant',
     fullRole: 'Research Assistant',
-    group: 'assistants',
+    group: 'past',
     photo: 'assets/img/team/arman-prangere.jpg',
     bio: [
       'Arman is a Research Assistant at the Neuropolitics Research Lab and an undergraduate student in Philosophy and Politics, currently on exchange at the University of Edinburgh.',
