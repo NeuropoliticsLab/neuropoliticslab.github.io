@@ -123,12 +123,25 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
   display: flex; align-items: center; gap: 1.5rem; min-height: 78px;
 }
 
-.brand { display: flex; align-items: center; text-decoration: none; margin-right: auto; }
+/* NRlabs wordmark paired with the University crest, divider between. */
+.brand-group { display: flex; align-items: center; gap: 1.1rem; margin-right: auto; }
+
+.brand { display: flex; align-items: center; text-decoration: none; }
 .brand:hover { text-decoration: none; }
 
-/* The NRlabs wordmark. Height is what matters — width follows the aspect
-   ratio, so a replacement logo file of any proportion still sits correctly. */
+/* Height is what matters — width follows the aspect ratio, so a replacement
+   logo file of any proportion still sits correctly. */
 .brand-logo { height: 46px; width: auto; display: block; }
+
+.brand-partner {
+  display: flex; align-items: center;
+  padding-left: 1.1rem; border-left: 1px solid var(--rule);
+}
+.brand-partner img { height: 34px; width: auto; display: block; opacity: .9; transition: opacity .15s ease; }
+.brand-partner:hover img, .brand-partner:focus-visible img { opacity: 1; }
+
+/* The nav needs the room below this width; the crest stays in the footer. */
+@media (max-width: 1080px) { .brand-partner { display: none; } }
 
 /* ---------------------------------------------------------------- nav -- */
 
