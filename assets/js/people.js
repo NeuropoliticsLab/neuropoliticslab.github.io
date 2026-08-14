@@ -107,7 +107,7 @@ var PEOPLE = [
     shortName: 'Sara Dalzel-Job',
     role: 'Research Fellow',
     fullRole: 'Research Fellow',
-    group: 'researchers',
+    group: 'past',
     photo: 'assets/img/team/sara-dalzel-job.jpg',
     bio: [
       "Sara studies people's emotional, cognitive, and behavioural responses to various stimuli using a blend of biophysiological methods (eye tracking, electrodermal activity, heart rate, facial expression), cognitive tasks, and self-report measures. Her recent research examines how different information presentation methods affect the situational readiness of frontline emergency workers.",
