@@ -165,8 +165,9 @@
 <script src="assets/js/people.js"></script>
 <script src="assets/js/publications.js"></script>
 <script>
-  // Current members, front and centre. Past members stay on the people page.
-  renderPeopleGrid(document.getElementById('home-people'), { exclude: ['past'], headings: false });
+  // Everyone, in one flat grid — no groupings drawn here. The people page
+  // carries the roles and the current/past distinction.
+  renderPeopleGrid(document.getElementById('home-people'), { headings: false });
 
   // Then the six most recent publications, newest first.
   var recent = PUBLICATIONS.slice().sort(function (a, b) {
