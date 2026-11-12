@@ -195,6 +195,34 @@ var PEOPLE = [
       "As a research fellow in the Neuropolitics Research Lab and Edinburgh Imaging, she explored the cognitive and neural underpinnings of identity, empathy, and emotion, applying advanced neuroimaging methods to questions in European public policy and group identity. Sujin was a key member of the Lab's fMRI research team."
     ],
     links: []
+  },
+  {
+    slug: 'lauren-rogers',
+    pubPattern: 'Lauren Rogers',
+    name: 'Lauren Rogers',
+    shortName: 'Lauren Rogers',
+    role: 'Past collaborator',
+    fullRole: 'Past collaborator, Neuropolitics Research Lab',
+    group: 'past',
+    photo: 'assets/img/team/lauren-rogers.jpg',
+    bio: [
+      'Past collaborator of the Neuropolitics Research Lab. Co-author on the lab\'s 2026 LREC paper on whether large language models can recover the structure and themes of political narratives.'
+    ],
+    links: []
+  },
+  {
+    slug: 'adrian-favero',
+    pubPattern: 'Adrian Favero',
+    name: 'Adrian Favero',
+    shortName: 'Adrian Favero',
+    role: 'Past collaborator',
+    fullRole: 'Past collaborator, Neuropolitics Research Lab',
+    group: 'past',
+    photo: null,
+    bio: [
+      'Past collaborator of the Neuropolitics Research Lab. Co-author on three lab papers from 2016 to 2019 that use Twitter data; they are listed below.'
+    ],
+    links: []
   }
 ];
 
@@ -220,6 +248,21 @@ var LINK_LABELS = {
   scholar: 'Google Scholar', orcid: 'ORCID', osf: 'OSF',
   github: 'GitHub', linkedin: 'LinkedIn', x: 'X', bluesky: 'Bluesky'
 };
+
+function initialsOf(name) {
+  return name.split(/\s+/).map(function (w) { return w.charAt(0); })
+    .slice(0, 2).join('').toUpperCase();
+}
+
+/* Portrait: the photo when there is one, otherwise initials on a tinted disc. */
+function portraitMarkup(p, size) {
+  if (p.photo) {
+    return '<img src="' + p.photo + '" alt="' + p.name +
+      '" loading="lazy" width="' + size + '" height="' + size + '">';
+  }
+  return '<span class="portrait-initials" role="img" aria-label="' + p.name + '">' +
+    initialsOf(p.name) + '</span>';
+}
 
 function renderLinkRow(person) {
   if (!person.links || !person.links.length) return '';
@@ -249,8 +292,7 @@ function renderPeopleGrid(mount, opts) {
   function card(p) {
     return '<div class="avatar-card">' +
       '<a class="avatar-link" href="person.html?id=' + p.slug + '">' +
-        '<span class="avatar"><img src="' + p.photo + '" alt="' + p.name +
-          '" loading="lazy" width="180" height="180"></span>' +
+        '<span class="avatar">' + portraitMarkup(p, 180) + '</span>' +
         '<span class="avatar-name">' + p.name + '</span>' +
       '</a>' +
       '<p class="avatar-role">' + p.role + '</p>' +

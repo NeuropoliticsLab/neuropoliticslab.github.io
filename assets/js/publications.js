@@ -46,6 +46,13 @@ var TYPE_LABELS = {
 var PUBLICATIONS = [
   /* ------------------------------------------------------------- 2026 -- */
   {
+    year: 2026, type: 'journal',
+    title: 'Cognitive Load and Stress in Frontline Policing: Evaluating the Impact of Redundant Data Provision via Biometric Monitoring',
+    authors: 'Sara Dalzel-Job, Constantine Kyritsopoulos, Arman Prangere, Luke Stephens, Robin L. Hill, Clare Llewellyn, Harry Schone, Aimee Lord, Margaret Bennett, Laura Cram',
+    venue: 'The Police Journal: Theory, Practice and Principles',
+    note: 'Accepted for publication in 2026; not yet in print. A pilot co-produced with Police Scotland.'
+  },
+  {
     // Title, author list and venue confirmed by Constantine Kyritsopoulos, an
     // author. NB the Crossref record behind the DOI still carries the earlier
     // title and lists Peyton Snyder in place of Sara Dalzel-Job.

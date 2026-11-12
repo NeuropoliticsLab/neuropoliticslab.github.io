@@ -146,8 +146,7 @@
       '<div class="wrap">' +
         '<a class="back-link" href="people.html">&larr; All people</a>' +
         '<div class="profile-head-inner">' +
-          '<span class="profile-photo"><img src="' + person.photo + '" alt="' +
-            person.name + '" width="220" height="220"></span>' +
+          '<span class="profile-photo">' + portraitMarkup(person, 220) + '</span>' +
           '<div>' +
             '<h1>' + person.name + '</h1>' +
             '<p class="profile-role">' + person.fullRole + '</p>' +
