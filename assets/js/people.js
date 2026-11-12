@@ -202,13 +202,17 @@ var PEOPLE = [
     name: 'Lauren Rogers',
     shortName: 'Lauren Rogers',
     role: 'Past collaborator',
-    fullRole: 'Past collaborator, Neuropolitics Research Lab',
+    fullRole: 'PhD student, School of Social and Political Science, University of Edinburgh; past collaborator of NRLabs',
     group: 'past',
     photo: 'assets/img/team/lauren-rogers.jpg',
     bio: [
+      'Lauren is a PhD student in the International Relations Research Group in the School of Social and Political Science at the University of Edinburgh.',
+      'Lauren\'s research deals with ontological security and strategic narratives. Lauren hopes to use case studies within the European Union to demonstrate how ontological stress can affect narrative formation in states, especially in times of crisis.',
       'Past collaborator of the Neuropolitics Research Lab. Co-author on the lab\'s 2026 LREC paper on whether large language models can recover the structure and themes of political narratives.'
     ],
-    links: []
+    links: [
+      { type: 'web', href: 'https://www.sps.ed.ac.uk/staff/lauren-rogers' }
+    ]
   },
   {
     slug: 'adrian-favero',
@@ -216,13 +220,18 @@ var PEOPLE = [
     name: 'Adrian Favero',
     shortName: 'Adrian Favero',
     role: 'Past collaborator',
-    fullRole: 'Past collaborator, Neuropolitics Research Lab',
+    fullRole: 'Assistant Professor in European Politics & Society, University of Groningen; past collaborator of NRLabs',
     group: 'past',
-    photo: null,
+    photo: 'assets/img/team/adrian-favero.png',
     bio: [
+      'Adrian is Assistant Professor in European Politics & Society at the University of Groningen, where Adrian joined in 2022 after a postdoctoral post on the Populism in Action project at the University of Birmingham. Adrian holds a PhD in Politics from the University of Edinburgh (2018).',
+      'Adrian\'s research covers transnational party organisations, populist radical right parties, intra-European migration and attitudes towards the EU, using mixed methods.',
       'Past collaborator of the Neuropolitics Research Lab. Co-author on three lab papers from 2016 to 2019 that use Twitter data; they are listed below.'
     ],
-    links: []
+    links: [
+      { type: 'web', href: 'https://www.rug.nl/staff/a.v.favero/' },
+      { type: 'orcid', href: 'https://orcid.org/0000-0003-2892-4128' }
+    ]
   }
 ];
 
