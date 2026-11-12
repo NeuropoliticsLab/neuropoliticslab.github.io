@@ -35,6 +35,7 @@ var PEOPLE = [
     fullRole: 'Professor of European Politics, Director NRLabs Neuropolitics Research, School of Social and Political Science, University of Edinburgh',
     group: 'faculty',
     photo: 'assets/img/team/laura-cram.jpg',
+    photoPos: '45% top',
     bio: [
       'Laura is the esteemed director of the Neuropolitics Research Lab, leading the team with a strong commitment to rigorous and innovative science.',
       'With a multidisciplinary background, her expertise spans European public policy, European identity, and the neuropolitics of both identity and public policy. She is experienced in experimental research methods, including fMRI, physiological studies, behavioural games, and the investigation of identity triggers.',
@@ -140,6 +141,7 @@ var PEOPLE = [
     fullRole: 'Research Fellow',
     group: 'researchers',
     photo: 'assets/img/team/luke-stephens.jpg',
+    photoPos: 'center 50%',
     bio: [
       'Luke is a doctoral researcher at the Neuropolitics Research Lab. His research explores the use of Large Language Models (LLMs) to extract and interpret political narratives from texts. Narratives play a central role in human sense-making, connecting events and actors to construct identities and values. Political actors strategically use narratives to influence interpretations and mobilize support, making them vital to political dynamics.',
       "Traditionally, narrative research has been qualitative and limited to smaller datasets due to the need for contextual understanding. Luke's work investigates whether LLMs can reliably identify both the structure and themes of narratives at scale. By combining computational analysis with traditional qualitative methods, his research aims to enhance the tools available for large-scale narrative analysis, improving our understanding of political discourse and communication.",
@@ -287,7 +289,8 @@ function initialsOf(name) {
 function portraitMarkup(p, size) {
   if (p.photo) {
     return '<img src="' + p.photo + '" alt="' + p.name +
-      '" loading="lazy" width="' + size + '" height="' + size + '">';
+      '" loading="lazy" width="' + size + '" height="' + size + '"' +
+      (p.photoPos ? ' style="object-position:' + p.photoPos + '"' : '') + '>';
   }
   return '<span class="portrait-initials" role="img" aria-label="' + p.name + '">' +
     initialsOf(p.name) + '</span>';
