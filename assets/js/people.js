@@ -242,12 +242,12 @@ var PEOPLE = [
     pubPattern: 'Jake Van Clief',
     name: 'Jake Van Clief',
     shortName: 'Jake Van Clief',
-    role: 'Collaborator',
-    fullRole: 'Eduba; Edinburgh alumni; collaborator of NRLabs',
-    group: 'collaborator',
-    photo: 'assets/img/collab/jake-van-clief.webp',
+    role: 'Collaborator and Edinburgh alumnus',
+    fullRole: 'Eduba; Edinburgh alumnus; collaborator of NRLabs',
+    group: 'past',
+    photo: 'assets/img/team/jake-van-clief.jpg',
     bio: [
-      'Jake is a collaborator of the Neuropolitics Research Lab and an Edinburgh alumni. Jake is a co-author of the lab\'s audit of authoritarianism in commercial large language models, which found a "caricature effect": the models exaggerate the left–right divide compared with real political extremists.',
+      'Jake is a collaborator of the Neuropolitics Research Lab and an Edinburgh alumnus. Jake is a co-author of the lab\'s audit of authoritarianism in commercial large language models, which found a "caricature effect": the models exaggerate the left–right divide compared with real political extremists.',
       'Jake built the Ethics Engine, a modular pipeline that puts validated psychological scales to LLMs under different personas and compares their answers with human data.',
       'Jake also works on Eduba, which makes AI learning software and offers AI training and consultancy.'
     ],
