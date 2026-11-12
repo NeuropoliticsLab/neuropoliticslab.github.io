@@ -35,7 +35,6 @@ var PEOPLE = [
     fullRole: 'Professor of European Politics, Director NRLabs Neuropolitics Research, School of Social and Political Science, University of Edinburgh',
     group: 'faculty',
     photo: 'assets/img/team/laura-cram.jpg',
-    photoPos: '45% top',
     bio: [
       'Laura is the esteemed director of the Neuropolitics Research Lab, leading the team with a strong commitment to rigorous and innovative science.',
       'With a multidisciplinary background, her expertise spans European public policy, European identity, and the neuropolitics of both identity and public policy. She is experienced in experimental research methods, including fMRI, physiological studies, behavioural games, and the investigation of identity triggers.',
