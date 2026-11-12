@@ -182,7 +182,7 @@ var PEOPLE = [
   },
   {
     slug: 'sujin-hong',
-    pubPattern: 'Su-Jin Hong',
+    pubPattern: 'Su-?[Jj]in Hong',
     name: 'Sujin Hong',
     shortName: 'Sujin Hong',
     role: 'Research Fellow (former)',

@@ -13,6 +13,7 @@
      venue    string
      doi      string — bare DOI, no https://doi.org/ prefix. Optional.
      url      string — used when there is no DOI. Optional.
+     pdf      string — path to a hosted copy of the paper, shown as "PDF". Optional.
      featured ordering only — sorts first within its year on the home page.
               It applies no label or styling of its own. Optional.
      note     string — one line of context. Optional.
@@ -31,7 +32,7 @@ var LAB_MEMBERS = [
   'Luke Stephens',
   'Constantin(?:e|os)(?: George| G\\.)? Kyritsopoulos',
   'Arman Prangere',
-  'Su-Jin Hong'
+  'Su-?[Jj]in Hong'
 ];
 
 var TYPE_LABELS = {
@@ -51,6 +52,14 @@ var PUBLICATIONS = [
     authors: 'Sara Dalzel-Job, Constantine Kyritsopoulos, Arman Prangere, Luke Stephens, Robin L. Hill, Clare Llewellyn, Harry Schone, Aimee Lord, Margaret Bennett, Laura Cram',
     venue: 'The Police Journal: Theory, Practice and Principles',
     note: 'Accepted for publication in 2026; not yet in print. A pilot co-produced with Police Scotland.'
+  },
+  {
+    year: 2026, type: 'journal',
+    title: 'Partisan social cognition and biased experiences in a polarised world: The neural processing of identity-based group membership',
+    authors: 'Adam Moore, Sujin Hong, Cyril R. Pernet, Alexa M. Morcom, Neil Roberts, Agamemnon Krasoulis, Laura Cram',
+    venue: 'In press',
+    pdf: 'assets/papers/moore-et-al-2026-accepted-manuscript.pdf',
+    note: "Authors' accepted version."
   },
   {
     // Title, author list and venue confirmed by Constantine Kyritsopoulos, an
@@ -516,6 +525,9 @@ function renderPub(pub) {
   }
   if (pub.url) {
     links.push('<a class="pub-link" href="' + escapeHtml(pub.url) + '" rel="noopener">Link</a>');
+  }
+  if (pub.pdf) {
+    links.push('<a class="pub-link" href="' + escapeHtml(pub.pdf) + '" rel="noopener">PDF</a>');
   }
 
   return '' +
