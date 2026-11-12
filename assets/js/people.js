@@ -204,11 +204,11 @@ var PEOPLE = [
     name: 'Lauren Rogers',
     shortName: 'Lauren Rogers',
     role: 'Past collaborator',
-    fullRole: 'PhD student, School of Social and Political Science, University of Edinburgh; past collaborator of NRLabs',
+    fullRole: 'PhD, School of Social and Political Science, University of Edinburgh; past collaborator of NRLabs',
     group: 'past',
     photo: 'assets/img/team/lauren-rogers.jpg',
     bio: [
-      'Lauren is a PhD student in the International Relations Research Group in the School of Social and Political Science at the University of Edinburgh.',
+      'Lauren holds a PhD from the School of Social and Political Science at the University of Edinburgh, in the International Relations Research Group.',
       'Lauren\'s research deals with ontological security and strategic narratives. Lauren hopes to use case studies within the European Union to demonstrate how ontological stress can affect narrative formation in states, especially in times of crisis.',
       'Past collaborator of the Neuropolitics Research Lab. Co-author on the lab\'s 2026 LREC paper on whether large language models can recover the structure and themes of political narratives.'
     ],
@@ -245,7 +245,7 @@ var PEOPLE = [
     role: 'Collaborator and Edinburgh alumnus',
     fullRole: 'Eduba; Edinburgh alumnus; collaborator of NRLabs',
     group: 'past',
-    photo: 'assets/img/team/jake-van-clief.jpg',
+    photo: 'assets/img/collab/jake-van-clief.webp',
     bio: [
       'Jake is a collaborator of the Neuropolitics Research Lab and an Edinburgh alumnus. Jake is a co-author of the lab\'s audit of authoritarianism in commercial large language models, which found a "caricature effect": the models exaggerate the left–right divide compared with real political extremists.',
       'Jake built the Ethics Engine, a modular pipeline that puts validated psychological scales to LLMs under different personas and compares their answers with human data.',
