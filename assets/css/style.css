@@ -207,6 +207,22 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
 .page-hero h1 { margin-bottom: .5rem; }
 .page-hero p { max-width: 64ch; margin-bottom: 0; font-size: 1.08rem; }
 
+/* ------------------------------------------------------- study cards -- */
+
+.study-grid { display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.study-card {
+  display: flex; flex-direction: column; background: #fff; color: inherit; text-decoration: none;
+  border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); transition: box-shadow .2s ease, transform .2s ease;
+}
+.study-card:hover, .study-card:focus-visible { box-shadow: var(--shadow-lift); transform: translateY(-4px); text-decoration: none; }
+.study-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.study-body { padding: 1.4rem 1.5rem 1.6rem; border-top: 3px solid var(--green); }
+.study-card:nth-child(2) .study-body { border-top-color: var(--purple); }
+.study-body h3 { font-size: 1.12rem; margin-bottom: .45rem; }
+.study-body p { font-size: .93rem; color: var(--ink); margin-bottom: .9rem; }
+.study-card:hover .arrow-link { color: var(--purple); }
+
 /* ------------------------------------------------------------ buttons -- */
 
 .btn-row { display: flex; flex-wrap: wrap; gap: .75rem; }
