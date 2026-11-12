@@ -51,7 +51,7 @@ var PUBLICATIONS = [
     title: 'Cognitive Load and Stress in Frontline Policing: Evaluating the Impact of Redundant Data Provision via Biometric Monitoring',
     authors: 'Sara Dalzel-Job, Constantine Kyritsopoulos, Arman Prangere, Luke Stephens, Robin L. Hill, Clare Llewellyn, Harry Schone, Aimee Lord, Margaret Bennett, Laura Cram',
     venue: 'The Police Journal: Theory, Practice and Principles',
-    note: 'Accepted for publication in 2026; not yet in print. A pilot co-produced with Police Scotland.'
+    note: 'Thirty Police Scotland officers heard real dispatcher audio during navigation tasks. Repeated information raised self-reported arousal and reduced recall, while physiological measures differed little. Accepted in 2026; not yet in print.'
   },
   {
     year: 2026, type: 'journal',
@@ -59,7 +59,7 @@ var PUBLICATIONS = [
     authors: 'Adam Moore, Sujin Hong, Cyril R. Pernet, Alexa M. Morcom, Neil Roberts, Agamemnon Krasoulis, Laura Cram',
     venue: 'In press',
     pdf: 'assets/papers/moore-et-al-2026-accepted-manuscript.pdf',
-    note: "Authors' accepted version."
+    note: "Brain imaging during a social-exclusion game shows that group identity biases how the same experience is processed in the moment, not only how people explain it afterwards. Authors' accepted version."
   },
   {
     // Title, author list and venue confirmed by Constantine Kyritsopoulos, an
@@ -77,8 +77,9 @@ var PUBLICATIONS = [
     year: 2026, type: 'conference',
     title: 'Gendered Communication Patterns of Political Elites on Truth Social',
     authors: 'Tom Bidewell, Artemis Deligianni, Tuğrulcan Elmas, Clare Llewellyn, Björn Ross',
-    venue: 'ACM Conference proceedings',
-    doi: '10.1145/3795766.3799762'
+    venue: 'ACM Web Science Conference (WebSci)',
+    doi: '10.1145/3795766.3799762',
+    note: 'Across 107,000 Truth Social posts by 129 US political figures, women expressed more joy, less anger and more fear-based rhetoric than men, and drew more engagement.'
   },
   {
     year: 2026, type: 'journal',
@@ -92,7 +93,8 @@ var PUBLICATIONS = [
     title: "Why Consumers Prefer Chatbots' Simulated Empathy: Revisiting the Empathy–Honesty Trade-Off",
     authors: 'Zi Ye, Feiteng Long, Lijuan Luo',
     venue: 'Journal of Consumer Behaviour',
-    doi: '10.1002/cb.70138'
+    doi: '10.1002/cb.70138',
+    note: 'In four experiments (N = 1,435), people preferred simulated empathy from chatbots over the same from humans, because they expect chatbots to feel less empathy in the first place.'
   },
   {
     year: 2026, type: 'chapter',
