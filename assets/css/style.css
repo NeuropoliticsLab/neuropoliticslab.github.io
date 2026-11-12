@@ -376,9 +376,10 @@ a.card:hover, a.card:focus-visible { text-decoration: none; box-shadow: var(--sh
 .collab-body { padding: 1.1rem 1.25rem 1.35rem; }
 .collab-body h3 { font-size: 1rem; margin-bottom: .2rem; }
 .collab-body p { font-size: .88rem; color: var(--ink-soft); margin-bottom: .5rem; }
-.collab-more summary { cursor: pointer; font-size: .88rem; color: var(--green); font-weight: 600; }
-.collab-more summary:hover, .collab-more summary:focus-visible { color: var(--purple); }
-.collab-more p { margin-top: .6rem; }
+a.collab { text-decoration: none; color: inherit; transition: box-shadow .18s ease, transform .18s ease; }
+a.collab:hover, a.collab:focus-visible { box-shadow: 0 0 0 3px var(--purple); transform: translateY(-3px); text-decoration: none; }
+.collab-link { color: var(--green); font-weight: 600; }
+a.collab:hover .collab-link, a.collab:focus-visible .collab-link { color: var(--purple); text-decoration: underline; }
 .collab-initials {
   height: 150px; display: flex; align-items: center; justify-content: center;
   background: var(--green-wash); color: var(--green); font-family: var(--display);

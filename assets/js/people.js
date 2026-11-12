@@ -232,6 +232,26 @@ var PEOPLE = [
       { type: 'web', href: 'https://www.rug.nl/staff/a.v.favero/' },
       { type: 'orcid', href: 'https://orcid.org/0000-0003-2892-4128' }
     ]
+  },
+  {
+    /* Collaborator: no 'group' that GROUPS renders, so no avatar in the people
+       grid. The card in people.html's Collaborators section links here. */
+    slug: 'jake-van-clief',
+    pubPattern: 'Jake Van Clief',
+    name: 'Jake Van Clief',
+    shortName: 'Jake Van Clief',
+    role: 'Collaborator',
+    fullRole: 'Eduba; Edinburgh alumni; collaborator of NRLabs',
+    group: 'collaborator',
+    photo: 'assets/img/collab/jake-van-clief.webp',
+    bio: [
+      'Jake is a collaborator of the Neuropolitics Research Lab and an Edinburgh alumni. Jake is a co-author of the lab\'s audit of authoritarianism in commercial large language models, which found a "caricature effect": the models exaggerate the left–right divide compared with real political extremists.',
+      'Jake built the Ethics Engine, a modular pipeline that puts validated psychological scales to LLMs under different personas and compares their answers with human data.',
+      'Jake also works on Eduba, which makes AI learning software and offers AI training and consultancy.'
+    ],
+    links: [
+      { type: 'web', href: 'https://eduba.io' }
+    ]
   }
 ];
 
