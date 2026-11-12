@@ -224,8 +224,8 @@ var PEOPLE = [
     group: 'past',
     photo: 'assets/img/team/adrian-favero.png',
     bio: [
-      'Adrian is Assistant Professor in European Politics & Society at the University of Groningen, where Adrian joined in 2022 after a postdoctoral post on the Populism in Action project at the University of Birmingham. Adrian holds a PhD in Politics from the University of Edinburgh (2018).',
-      'Adrian\'s research covers transnational party organisations, populist radical right parties, intra-European migration and attitudes towards the EU, using mixed methods.',
+      'Adrian is Assistant Professor in European Politics & Society at the University of Groningen, where he joined in 2022 after a postdoctoral post on the Populism in Action project at the University of Birmingham. He holds a PhD in Politics from the University of Edinburgh (2018).',
+      'His research covers transnational party organisations, populist radical right parties, intra-European migration and attitudes towards the EU, using mixed methods.',
       'Past collaborator of the Neuropolitics Research Lab. Co-author on three lab papers from 2016 to 2019 that use Twitter data; they are listed below.'
     ],
     links: [
